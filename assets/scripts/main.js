@@ -21,16 +21,10 @@ function init() {
  * @returns {Array<Object>} An array of recipes found in localStorage
  */
 function getRecipesFromStorage() {
-  // A9. TODO - Complete the functionality as described in this function
-  //           header. It is possible in only a single line, but should
-  //           be no more than a few lines.
-
-  // Read recipes from localStorage
-    const recipes = JSON.parse(localStorage.getItem('recipes'));
-    // If nothing was found, return an empty array
-    if (!recipes) return [];
-    // Otherwise, return the parsed recipes
-    return recipes;
+  // A9. Complete the functionality as described in this function
+  //     header. It is possible in only a single line, but should
+  //     be no more than a few lines.
+    return JSON.parse(localStorage.getItem('recipes'));
 }
 
 /**
@@ -41,17 +35,14 @@ function getRecipesFromStorage() {
  * @param {Array<Object>} recipes An array of recipes
  */
 function addRecipesToDocument(recipes) {
-    // A10. TODO - Get a reference to the <main> element
-
-    // Get a reference to the main element
+    // A10. Get a reference to the <main> element
     const main = document.querySelector('main');
 
-    // A11. TODO - Loop through each of the recipes in the passed in array,
-    //            create a <recipe-card> element for each one, and populate
-    //            each <recipe-card> with that recipe data using element.data = ...
-    //            Append each element to <main>
+    // A11. Loop through each of the recipes in the array,
+    //      create a <recipe-card> element for each one, and populate
+    //      each <recipe-card> with that recipe data using element.data = ...
+    //      Append each element to <main>
 
-    // Loop through each recipe
     recipes.forEach(recipe => {
         // Create a new recipe-card element
         const recipeCard = document.createElement('recipe-card');
