@@ -77,9 +77,12 @@ function initFormHandler() {
   // B3. TODO - Add an event listener for the 'submit' event, which fires when the
   //            submit button is clicked
   form.addEventListener('submit', (event) =>{
-    formData = new FormData(form);
-    recipeObject = {};
-    recipeObject = Object.entries(formData);
+    var form = document.querySelector('form');
+    var formData = new FormData(form);
+    var recipeObject = {};
+    for (const entry of formData.entries()) {
+      recipeObject[entry[0]] = entry[1];
+    }
     var recipeCard = document.createElement('recipe-card');
     recipeCard.data = recipeObject;
     const main = document.querySelector('main');
