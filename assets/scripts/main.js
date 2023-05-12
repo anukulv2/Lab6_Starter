@@ -92,11 +92,11 @@ function initFormHandler() {
     saveRecipesToStorage(recipes);
   });
     const clear = document.getElementsByClassName('danger')[0];
-    clearBtn.addEventListener('click', () => {
+    clear.addEventListener('click', () => {
 
       saveRecipesToStorage([]);
 
-      const main = document.getElementsByTagName('main');
+      const main = document.getElementsByTagName('main')[0];
       main.innerHTML = '';
    });
   }
